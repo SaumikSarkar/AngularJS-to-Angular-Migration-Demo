@@ -1,6 +1,6 @@
 //********** Route Definations ********* */
 
-demoAppModule.config(function ($routeProvider) {
+demoAppModule.config(function ($routeProvider,$locationProvider) {
     $routeProvider.when('/home', {
         templateUrl: 'views/homePage.html',
         controller: 'HomePageController'
@@ -16,6 +16,7 @@ demoAppModule.config(function ($routeProvider) {
     $routeProvider.otherwise({
         redirectTo: '/home'
     });
+    $locationProvider.html5Mode(true);
 });
 
 //************************************* */
