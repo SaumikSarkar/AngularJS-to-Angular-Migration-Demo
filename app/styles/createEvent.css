@@ -1,0 +1,29 @@
+.event-container .input-field {
+    margin: 20px;
+}
+
+.event-container .input-field .input {
+    border: 1px solid #c0c1c5;
+    border-radius: 3px;
+    padding: 8px;
+    outline: none;
+    color: #151d14;
+}
+
+.event-container .input-field label {
+    padding: 10px;
+    color: #2e2c46;
+}
+
+.event-container .button-section {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+}
+
+.event-container .button-section .button {
+    color: #fff;
+    background-color: #6262cc;
+    padding: 8px 25px;
+    margin-left: 25px;
+}

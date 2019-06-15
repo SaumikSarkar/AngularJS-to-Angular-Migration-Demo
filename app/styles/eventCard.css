@@ -1,0 +1,38 @@
+.card {
+    border: 1px solid #9d9ca5;
+    margin-bottom: 20px;
+    padding: 20px;
+    height: 225px;
+}
+
+.card .card-body .card-title {
+    font-weight: 600;
+    color: #2e2c46;
+}
+
+.card .card-body .card-description {
+    color: #151d14;
+}
+
+.card .card-body .card-attribute-title {
+    color: #151d14;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.card .card-body .card-attribute {
+    color: #151d14;
+    font-style: italic;
+    font-size: 12px;
+}
+
+.card .card-body .card-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card .card-body .card-button .button {
+    color: #fff;
+    background-color: #6262cc;
+    padding: 8px 25px;
+}

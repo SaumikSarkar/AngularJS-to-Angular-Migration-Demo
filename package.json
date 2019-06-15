@@ -1,0 +1,23 @@
+{
+    "name": "AngularJSMigrationApp",
+    "version": "1.0.0",
+    "description": "Demo Application on Migration from AngularJS to Angular",
+    "dependencies": {
+        "express": "*"
+    },
+    "engine": "node >=0.6.x",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "main": "server.js",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "author": "Saumik Sarkar",
+    "license": "XD Studio MDC",
+    "bugs": {
+        "url": ""
+    },
+    "homepage": "/"
+}
