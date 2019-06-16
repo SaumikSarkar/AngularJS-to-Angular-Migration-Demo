@@ -1,5 +1,9 @@
-demoAppModule.controller('CreateEventController',
-    function HomePageController(eventService, $routeParams) {
+demoAppModule.component('createEvent', {
+    templateUrl: './createEvent/createEvent.component.html',
+    bindings: {
+
+    },
+    controller: function (eventService, $routeParams) {
         this.events = eventService.eventData;
         this.sessionID = $routeParams.sessionID;
         this.eventTitle;
@@ -47,4 +51,4 @@ demoAppModule.controller('CreateEventController',
             eventService.eventData.push(this.eventObject);
         }
     }
-);
+});

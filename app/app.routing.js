@@ -2,19 +2,13 @@
 
 demoAppModule.config(function ($routeProvider,$locationProvider) {
     $routeProvider.when('/home', {
-        templateUrl: 'homePage/homePage.html',
-        controller: 'HomePageController',
-        controllerAs: '$ctrl'
+        template: '<home-page></home-page>'
     });
     $routeProvider.when('/event/add', {
-        templateUrl: 'createEvent/createEvent.html',
-        controller: 'CreateEventController',
-        controllerAs: '$ctrl'
+        template: '<create-event></create-event>'
     });
     $routeProvider.when('/event/edit/:sessionID', {
-        templateUrl: 'createEvent/createEvent.html',
-        controller: 'CreateEventController',
-        controllerAs: '$ctrl'
+        template: '<create-event></create-event>'
     });
     $routeProvider.otherwise({
         redirectTo: '/home'
