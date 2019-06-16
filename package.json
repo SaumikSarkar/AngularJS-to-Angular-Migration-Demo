@@ -3,11 +3,16 @@
     "version": "1.0.0",
     "description": "Demo Application on Migration from AngularJS to Angular",
     "dependencies": {
-        "express": "*"
+        "@types/angular": "1.6.26",
+        "@types/core-js": "0.9.42",
+        "@types/jasmine": "2.5.53",
+        "express": "*",
+        "typescript": "2.3.4"
     },
     "engine": "node >=0.6.x",
     "scripts": {
-        "start": "node server.js"
+        "start": "node server.js",
+        "tsc": "tsc -p . -w"
     },
     "main": "server.js",
     "repository": {
