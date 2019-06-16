@@ -1,5 +1,6 @@
 //********** Route Definations ********* */
-demoAppModule.config(function ($routeProvider, $locationProvider) {
+
+demoAppModule.config(function ($routeProvider,$locationProvider) {
     $routeProvider.when('/home', {
         template: '<home-page></home-page>'
     });
@@ -14,5 +15,5 @@ demoAppModule.config(function ($routeProvider, $locationProvider) {
     });
     $locationProvider.html5Mode(true);
 });
-//************************************* */ 
-//# sourceMappingURL=app.routing.js.map
+
+//************************************* */

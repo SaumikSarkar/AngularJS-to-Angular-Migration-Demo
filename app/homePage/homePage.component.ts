@@ -1,8 +1,9 @@
 demoAppModule.component('homePage', {
     templateUrl: './homePage/homePage.component.html',
-    bindings: {},
+    bindings: {
+
+    },
     controller: function (eventService) {
         this.events = eventService.eventData;
     }
 });
-//# sourceMappingURL=homePage.component.js.map

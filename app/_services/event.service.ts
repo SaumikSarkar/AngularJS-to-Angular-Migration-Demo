@@ -1,4 +1,4 @@
-demoAppModule.factory('eventService', function () {
+demoAppModule.factory('eventService', function() {
     return {
         eventData: [
             {
@@ -44,6 +44,5 @@ demoAppModule.factory('eventService', function () {
                 sessionID: 89411
             }
         ]
-    };
+    }
 });
-//# sourceMappingURL=event.service.js.map

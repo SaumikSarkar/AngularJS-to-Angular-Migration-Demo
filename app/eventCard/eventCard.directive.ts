@@ -4,6 +4,6 @@ demoAppModule.component('eventCard', {
         event: '='
     },
     controller: function () {
+
     }
 });
-//# sourceMappingURL=eventCard.directive.js.map
