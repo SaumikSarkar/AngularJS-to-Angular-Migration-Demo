@@ -5,6 +5,11 @@ demoAppModule.directive('eventCard', function() {
         templateUrl: 'eventCard/eventCard.html',
         scope: {
             event: '='
+        },
+        controllerAs: '$ctrl',
+        bindToController: true,
+        controller: function() {
+            
         }
     }
 });

@@ -1,50 +1,50 @@
 demoAppModule.controller('CreateEventController',
-    function HomePageController($scope, eventService, $routeParams) {
-        $scope.events = eventService.eventData;
-        $scope.sessionID = $routeParams.sessionID;
-        $scope.eventTitle;
-        $scope.eventDescription;
-        $scope.eventAuthor;
-        $scope.eventDate;
-        $scope.selectedEvent;
+    function HomePageController(eventService, $routeParams) {
+        this.events = eventService.eventData;
+        this.sessionID = $routeParams.sessionID;
+        this.eventTitle;
+        this.eventDescription;
+        this.eventAuthor;
+        this.eventDate;
+        this.selectedEvent;
 
-        $scope.eventObject = {};
+        this.eventObject = {};
 
-        $scope.getEventData = function (sessionID) {
-            $scope.selectedEvent = $scope.events.filter(function (data) {
+        this.getEventData = function (sessionID) {
+            this.selectedEvent = this.events.filter(function (data) {
                 if (sessionID == data.sessionID)
                     return data;
             });
-            if ($scope.selectedEvent.length != 0) {
-                $scope.eventTitle = $scope.selectedEvent[0].title;
-                $scope.eventDescription = $scope.selectedEvent[0].description;
-                $scope.eventAuthor = $scope.selectedEvent[0].author;
-                $scope.eventDate = $scope.selectedEvent[0].date;
+            if (this.selectedEvent.length != 0) {
+                this.eventTitle = this.selectedEvent[0].title;
+                this.eventDescription = this.selectedEvent[0].description;
+                this.eventAuthor = this.selectedEvent[0].author;
+                this.eventDate = this.selectedEvent[0].date;
             }
         }
 
-        $scope.sessionID = $scope.sessionID ? $scope.sessionID : Math.floor(10000 + Math.random() * 90000);
+        this.sessionID = this.sessionID ? this.sessionID : Math.floor(10000 + Math.random() * 90000);
 
-        if ($scope.sessionID) {
-            $scope.getEventData($scope.sessionID);
+        if (this.sessionID) {
+            this.getEventData(this.sessionID);
         }
 
-        $scope.addEvent = function () {
-            $scope.eventObject = {
-                title: $scope.eventTitle,
-                description: $scope.eventDescription,
-                date: $scope.eventDate,
-                author: $scope.eventAuthor,
-                sessionID: $scope.sessionID
+        this.addEvent = function () {
+            this.eventObject = {
+                title: this.eventTitle,
+                description: this.eventDescription,
+                date: this.eventDate,
+                author: this.eventAuthor,
+                sessionID: this.sessionID
             };
-            if ($scope.selectedEvent.length != 0) {
+            if (this.selectedEvent.length != 0) {
                 eventService.eventData.forEach(function (data, index) {
-                    if (data.sessionID == $scope.sessionID) {
+                    if (data.sessionID == this.sessionID) {
                         eventService.eventData.splice(index, 1);
                     }
-                });
+                }.bind(this));
             }
-            eventService.eventData.push($scope.eventObject);
+            eventService.eventData.push(this.eventObject);
         }
     }
 );

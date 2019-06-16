@@ -1,5 +1,5 @@
 demoAppModule.controller('HomePageController',
-    function HomePageController($scope, eventService) {
-        $scope.events = eventService.eventData;
+    function HomePageController(eventService) {
+        this.events = eventService.eventData;
     }
 );
