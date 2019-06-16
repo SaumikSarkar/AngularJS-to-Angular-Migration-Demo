@@ -1,6 +1,6 @@
-@import './eventCard.css';
-@import './homePage.css';
-@import './createEvent.css';
+@import './eventCard/eventCard.css';
+@import './homePage/homePage.css';
+@import './createEvent/createEvent.css';
 
 .navbar {
     background-color: #6262cc;
