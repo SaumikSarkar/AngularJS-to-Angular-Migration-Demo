@@ -1,6 +1,6 @@
-demoAppModule.factory('eventService', function () {
-    return {
-        eventData: [
+demoAppModule.service('eventService', (function () {
+    function EventService() {
+        this.eventData = [
             {
                 title: 'AngularJS Fundamentals',
                 description: 'This session includes the fundamentals for AngularJS',
@@ -43,7 +43,8 @@ demoAppModule.factory('eventService', function () {
                 author: 'Abhishek Srivastava and Saumik Sarkar',
                 sessionID: 89411
             }
-        ]
-    };
-});
+        ];
+    }
+    return EventService;
+}()));
 //# sourceMappingURL=event.service.js.map
