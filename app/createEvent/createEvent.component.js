@@ -2,7 +2,7 @@ demoAppModule.component('createEvent', {
     templateUrl: './createEvent/createEvent.component.html',
     bindings: {},
     controller: (function () {
-        function CreateEvent(eventService, $routeParams) {
+        function CreateEventComponent(eventService, $routeParams) {
             this.eventObject = {};
             this.eventService = eventService;
             this.$routeParams = $routeParams;
@@ -13,7 +13,7 @@ demoAppModule.component('createEvent', {
                 this.getEventData(this.sessionID);
             }
         }
-        CreateEvent.prototype.getEventData = function (sessionID) {
+        CreateEventComponent.prototype.getEventData = function (sessionID) {
             this.selectedEvent = this.events.filter(function (data) {
                 if (sessionID == data.sessionID)
                     return data;
@@ -25,7 +25,7 @@ demoAppModule.component('createEvent', {
                 this.eventDate = this.selectedEvent[0].date;
             }
         };
-        CreateEvent.prototype.addEvent = function () {
+        CreateEventComponent.prototype.addEvent = function () {
             var _this = this;
             this.eventObject = {
                 title: this.eventTitle,
@@ -43,7 +43,7 @@ demoAppModule.component('createEvent', {
             }
             this.eventService.eventData.push(this.eventObject);
         };
-        return CreateEvent;
+        return CreateEventComponent;
     }())
 });
 //# sourceMappingURL=createEvent.component.js.map

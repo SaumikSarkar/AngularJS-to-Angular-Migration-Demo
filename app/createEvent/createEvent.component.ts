@@ -1,7 +1,7 @@
 demoAppModule.component('createEvent', {
     templateUrl: './createEvent/createEvent.component.html',
     bindings: {},
-    controller: class CreateEvent {
+    controller: class CreateEventComponent {
 
         events: any;
         sessionID: number;

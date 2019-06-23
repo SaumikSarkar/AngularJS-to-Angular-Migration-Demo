@@ -4,9 +4,9 @@ demoAppModule.component('eventCard', {
         event: '='
     },
     controller: (function () {
-        function EventCard() {
+        function EventCardComponent() {
         }
-        return EventCard;
+        return EventCardComponent;
     }())
 });
 //# sourceMappingURL=eventCard.component.js.map

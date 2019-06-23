@@ -1,7 +1,7 @@
 demoAppModule.component('homePage', {
     templateUrl: './homePage/homePage.component.html',
     bindings: {},
-    controller: class HomePage {
+    controller: class HomePageComponent {
 
         events: any;
         eventService: any;

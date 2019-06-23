@@ -3,7 +3,7 @@ demoAppModule.component('eventCard', {
     bindings: {
         event: '='
     },
-    controller: class EventCard {
+    controller: class EventCardComponent {
         constructor() {}
     }
 });
