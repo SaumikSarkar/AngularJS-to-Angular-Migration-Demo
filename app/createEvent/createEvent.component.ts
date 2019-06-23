@@ -1,21 +1,35 @@
 demoAppModule.component('createEvent', {
     templateUrl: './createEvent/createEvent.component.html',
-    bindings: {
+    bindings: {},
+    controller: class CreateEvent {
 
-    },
-    controller: function (eventService, $routeParams) {
-        this.events = eventService.eventData;
-        this.sessionID = $routeParams.sessionID;
-        this.eventTitle;
-        this.eventDescription;
-        this.eventAuthor;
-        this.eventDate;
-        this.selectedEvent;
+        events: any;
+        sessionID: number;
+        eventTitle: string;
+        eventDescription: string;
+        eventAuthor: string;
+        eventDate: string;
+        selectedEvent: Array<any>;
+        eventObject: any = {};
+        eventService: any;
+        $routeParams: any;
 
-        this.eventObject = {};
+        constructor(eventService, $routeParams) {
 
-        this.getEventData = function (sessionID) {
-            this.selectedEvent = this.events.filter(function (data) {
+            this.eventService = eventService;
+            this.$routeParams = $routeParams;
+
+            this.events = this.eventService.eventData;
+            this.sessionID = this.$routeParams.sessionID;
+
+            this.sessionID = this.sessionID ? this.sessionID : Math.floor(10000 + Math.random() * 90000);
+            if (this.sessionID) {
+                this.getEventData(this.sessionID);
+            }
+        }
+
+        getEventData(sessionID) {
+            this.selectedEvent = this.events.filter((data: any) => {
                 if (sessionID == data.sessionID)
                     return data;
             });
@@ -27,13 +41,7 @@ demoAppModule.component('createEvent', {
             }
         }
 
-        this.sessionID = this.sessionID ? this.sessionID : Math.floor(10000 + Math.random() * 90000);
-
-        if (this.sessionID) {
-            this.getEventData(this.sessionID);
-        }
-
-        this.addEvent = function () {
+        addEvent() {
             this.eventObject = {
                 title: this.eventTitle,
                 description: this.eventDescription,
@@ -42,13 +50,13 @@ demoAppModule.component('createEvent', {
                 sessionID: this.sessionID
             };
             if (this.selectedEvent.length != 0) {
-                eventService.eventData.forEach(function (data, index) {
+                this.eventService.eventData.forEach((data: any, index: any) => {
                     if (data.sessionID == this.sessionID) {
-                        eventService.eventData.splice(index, 1);
+                        this.eventService.eventData.splice(index, 1);
                     }
-                }.bind(this));
+                });
             }
-            eventService.eventData.push(this.eventObject);
+            this.eventService.eventData.push(this.eventObject);
         }
     }
 });

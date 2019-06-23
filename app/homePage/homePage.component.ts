@@ -1,9 +1,14 @@
 demoAppModule.component('homePage', {
     templateUrl: './homePage/homePage.component.html',
-    bindings: {
+    bindings: {},
+    controller: class HomePage {
 
-    },
-    controller: function (eventService) {
-        this.events = eventService.eventData;
+        events: any;
+        eventService: any;
+
+        constructor (eventService) {
+            this.eventService = eventService;
+            this.events = this.eventService.eventData;
+        }
     }
 });
