@@ -1,4 +1,4 @@
-demoAppModule.service('eventService',
+angular.module('demoApp').service('eventService',
     class EventService {
         eventData: Array<any>;
         constructor() {

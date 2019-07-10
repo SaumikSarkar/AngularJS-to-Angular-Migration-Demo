@@ -1,5 +1,5 @@
-demoAppModule.component('createEvent', {
-    templateUrl: './createEvent/createEvent.component.html',
+angular.module('demoApp').component('createEvent', {
+    templateUrl: './createEvent.component.html',
     bindings: {},
     controller: class CreateEventComponent {
 

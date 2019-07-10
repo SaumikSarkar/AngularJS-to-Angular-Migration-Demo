@@ -1,5 +1,5 @@
-demoAppModule.component('homePage', {
-    templateUrl: './homePage/homePage.component.html',
+angular.module('demoApp').component('homePage', {
+    templateUrl: './homePage.component.html',
     bindings: {},
     controller: class HomePageComponent {
 

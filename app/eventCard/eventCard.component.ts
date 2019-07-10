@@ -1,5 +1,5 @@
-demoAppModule.component('eventCard', {
-    templateUrl: 'eventCard/eventCard.component.html',
+angular.module('demoApp').component('eventCard', {
+    templateUrl: './eventCard.component.html',
     bindings: {
         event: '='
     },

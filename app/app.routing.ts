@@ -1,6 +1,6 @@
 //********** Route Definations ********* */
 
-demoAppModule.config(function ($routeProvider,$locationProvider) {
+angular.module('demoApp').config(function ($routeProvider,$locationProvider) {
     $routeProvider.when('/home', {
         template: '<home-page></home-page>'
     });
