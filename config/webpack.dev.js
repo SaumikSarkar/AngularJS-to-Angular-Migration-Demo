@@ -3,10 +3,12 @@ const webpack = require('webpack');
 const helpers = require('./helpers');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const ENV = process.env.NODE_ENV = process.env.ENV = 'development';
 
 module.exports = {
+    mode: process.env.NODE_ENV,
 
     entry: {
         'angularjsbuild': './app/index.ts'
@@ -20,7 +22,7 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.ts', '.js']
+        extensions: ['.ts', '.js', '.scss', '.css']
     },
 
     module: {
@@ -40,15 +42,44 @@ module.exports = {
                     limit: 1,
                     name: '[name].[ext]',
                 },
+            },
+            {
+                test: /\.(sc|c)ss$/,
+                loader: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 2,
+                            modules: true,
+                            localIdentName: '[local]',
+                            camelCase: true,
+                            sourceMap: true
+                        }
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    }
+                ]
             }
         ]
     },
 
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    name: 'common',
+                    minChunks: Infinity
+                }
+              }
+        }
+    },
+
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'common',
-            minChunks: Infinity
-        }),
 
         new webpack.SourceMapDevToolPlugin({
             'filename': '[file].map[query]',
@@ -65,6 +96,11 @@ module.exports = {
             'process.env': {
                 'ENV': JSON.stringify(ENV)
             }
+        }),
+
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
+            chunkFilename: '[id].css'
         })
-    ]
+    ]   
 }

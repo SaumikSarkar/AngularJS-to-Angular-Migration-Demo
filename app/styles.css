@@ -1,4 +1,4 @@
-@import './eventCard/eventCard.component.css';
+@import './eventCard/eventCard.component.scss';
 @import './homePage/homePage.component.css';
 @import './createEvent/createEvent.component.css';
 
