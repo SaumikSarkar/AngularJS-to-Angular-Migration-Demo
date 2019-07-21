@@ -1,0 +1,19 @@
+.navbar {
+    background-color: #6262cc;
+    color: #fff;
+    border: none;
+    border-radius: 0px !important;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.navbar .navbar-brand {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.view-container {
+    margin-top: 100px;
+}
