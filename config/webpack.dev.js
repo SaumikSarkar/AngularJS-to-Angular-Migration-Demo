@@ -11,8 +11,8 @@ module.exports = {
     mode: ENV,
 
     entry: {
-        'angularjsbuild': './app/index.ts',
-        'app': './app/main.ts'
+        'angularjsbuild': './src/index.ts',
+        'app': './src/main.ts'
     },
 
     output: {
