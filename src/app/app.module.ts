@@ -6,6 +6,11 @@ import { UpgradeModule } from "@angular/upgrade/static";
 import { AppComponent } from "./app.component";
 import { EventService } from "./_services/event.service";
 import { EventCardComponent } from "./components/eventCard/eventCard.component";
+import { CreateEventComponent } from "./components/createEvent/createEvent.component";
+
+function getRouteParams(injector: any) {
+    return injector.get('$routeParams');
+}
 
 @NgModule({
     imports: [
@@ -16,16 +21,19 @@ import { EventCardComponent } from "./components/eventCard/eventCard.component";
     ],
     declarations: [
         AppComponent,
-        EventCardComponent
+        EventCardComponent,
+        CreateEventComponent
     ],
     providers: [
-        EventService
+        EventService,
+        { provide: '$routeParams', useFactory: getRouteParams, deps: ['$injector']}
     ],
     bootstrap: [
         AppComponent
     ],
     entryComponents: [
-        EventCardComponent
+        EventCardComponent,
+        CreateEventComponent
     ]
 })
 

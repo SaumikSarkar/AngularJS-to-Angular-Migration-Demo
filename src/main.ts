@@ -3,6 +3,7 @@ import { UpgradeModule, downgradeInjectable, downgradeComponent } from '@angular
 import { AppModule } from './app/app.module';
 import { EventService } from './app/_services/event.service';
 import { EventCardComponent } from './app/components/eventCard/eventCard.component';
+import { CreateEventComponent } from './app/components/createEvent/createEvent.component';
 
 declare var angular: angular.IAngularStatic;
 
@@ -12,6 +13,9 @@ platformBrowserDynamic().bootstrapModule(AppModule).then(platformRef => {
         .factory('eventService', downgradeInjectable(EventService))
         .directive('eventCard', downgradeComponent({
             component: EventCardComponent
+        }))
+        .directive('createEvent', downgradeComponent({
+            component: CreateEventComponent
         }));
 
     const upgrade = platformRef.injector.get(UpgradeModule) as UpgradeModule;
