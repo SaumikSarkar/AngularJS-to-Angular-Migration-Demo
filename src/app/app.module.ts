@@ -4,6 +4,7 @@ import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { UpgradeModule } from "@angular/upgrade/static";
 import { AppComponent } from "./app.component";
+import { EventService } from "./_services/event.service";
 
 @NgModule({
     imports: [
@@ -16,7 +17,7 @@ import { AppComponent } from "./app.component";
         AppComponent
     ],
     providers: [
-
+        EventService
     ],
     bootstrap: [
         AppComponent
