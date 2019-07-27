@@ -4,6 +4,7 @@ import { AppModule } from './app/app.module';
 import { EventService } from './app/_services/event.service';
 import { EventCardComponent } from './app/components/eventCard/eventCard.component';
 import { CreateEventComponent } from './app/components/createEvent/createEvent.component';
+import { HomePageComponent } from './app/components/homePage/homePage.component';
 
 declare var angular: angular.IAngularStatic;
 
@@ -16,6 +17,9 @@ platformBrowserDynamic().bootstrapModule(AppModule).then(platformRef => {
         }))
         .directive('createEvent', downgradeComponent({
             component: CreateEventComponent
+        }))
+        .directive('homePage', downgradeComponent({
+            component: HomePageComponent
         }));
 
     const upgrade = platformRef.injector.get(UpgradeModule) as UpgradeModule;

@@ -7,6 +7,7 @@ import { AppComponent } from "./app.component";
 import { EventService } from "./_services/event.service";
 import { EventCardComponent } from "./components/eventCard/eventCard.component";
 import { CreateEventComponent } from "./components/createEvent/createEvent.component";
+import { HomePageComponent } from "./components/homePage/homePage.component";
 
 function getRouteParams(injector: any) {
     return injector.get('$routeParams');
@@ -22,7 +23,8 @@ function getRouteParams(injector: any) {
     declarations: [
         AppComponent,
         EventCardComponent,
-        CreateEventComponent
+        CreateEventComponent,
+        HomePageComponent
     ],
     providers: [
         EventService,
@@ -33,7 +35,8 @@ function getRouteParams(injector: any) {
     ],
     entryComponents: [
         EventCardComponent,
-        CreateEventComponent
+        CreateEventComponent,
+        HomePageComponent
     ]
 })
 
