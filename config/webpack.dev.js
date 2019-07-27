@@ -11,6 +11,8 @@ module.exports = {
     mode: ENV,
 
     entry: {
+        'polyfills': './src/polyfills.ts',
+        'vendor': './src/vendor.ts',
         'angularjsbuild': './src/index.ts',
         'app': './src/main.ts'
     },
@@ -75,8 +77,13 @@ module.exports = {
                 commons: {
                     name: 'common',
                     minChunks: Infinity
+                },
+                vendor: {
+                    name: 'vendor',
+                    chunks: 'all',
+                    minChunks: 2
                 }
-              }
+            }
         }
     },
 
