@@ -3,6 +3,6 @@
 </div>
 <div class="event-cards col-md-12">
     <div ng-repeat="event in $ctrl.events" class="col-md-4">
-        <event-card event="event" />
+        <event-card [event]="event" />
     </div>
 </div>

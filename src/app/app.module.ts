@@ -5,6 +5,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { UpgradeModule } from "@angular/upgrade/static";
 import { AppComponent } from "./app.component";
 import { EventService } from "./_services/event.service";
+import { EventCardComponent } from "./components/eventCard/eventCard.component";
 
 @NgModule({
     imports: [
@@ -14,7 +15,8 @@ import { EventService } from "./_services/event.service";
         UpgradeModule
     ],
     declarations: [
-        AppComponent
+        AppComponent,
+        EventCardComponent
     ],
     providers: [
         EventService
@@ -23,7 +25,7 @@ import { EventService } from "./_services/event.service";
         AppComponent
     ],
     entryComponents: [
-        
+        EventCardComponent
     ]
 })
 
