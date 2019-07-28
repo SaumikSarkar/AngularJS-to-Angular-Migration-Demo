@@ -2,7 +2,6 @@ import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
-import { UpgradeModule } from "@angular/upgrade/static";
 import { AppRoutingModule } from "./app-routing.module";
 
 import { AppComponent } from "./app.component";
@@ -16,7 +15,6 @@ import { HomePageComponent } from "./components/homePage/homePage.component";
         BrowserModule,
         FormsModule,
         HttpClientModule,
-        UpgradeModule,
         AppRoutingModule
     ],
     declarations: [
@@ -31,11 +29,7 @@ import { HomePageComponent } from "./components/homePage/homePage.component";
     bootstrap: [
         AppComponent
     ],
-    entryComponents: [
-        EventCardComponent,
-        CreateEventComponent,
-        HomePageComponent
-    ]
+    entryComponents: []
 })
 
 export class AppModule { }

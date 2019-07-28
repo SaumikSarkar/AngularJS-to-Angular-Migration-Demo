@@ -1,1 +1,0 @@
-var demoAppModule = angular.module('demoApp', ['ngRoute']);

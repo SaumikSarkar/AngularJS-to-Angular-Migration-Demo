@@ -13,7 +13,6 @@ module.exports = {
     entry: {
         'polyfills': './src/polyfills.ts',
         'vendor': './src/vendor.ts',
-        'angularjsbuild': './src/index.ts',
         'app': './src/main.ts'
     },
 
