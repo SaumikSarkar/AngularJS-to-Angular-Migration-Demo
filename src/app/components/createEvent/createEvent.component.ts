@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from "@angular/core";
 import { EventService } from "../../_services/event.service";
+import { ActivatedRoute, ParamMap } from "@angular/router";
 
 @Component({
     selector: 'create-event',
@@ -20,11 +21,15 @@ export class CreateEventComponent implements OnInit {
     eventObject: any = {};
 
     constructor(public eventService: EventService,
-        @Inject('$routeParams') public $routeParams) { }
+        private route: ActivatedRoute) { }
 
     ngOnInit() {
+        this.route.paramMap.subscribe((params: ParamMap) => {
+            let parse = params.get('sessionID');
+            this.sessionID = +parse;
+        });
+
         this.events = this.eventService.eventData;
-        this.sessionID = this.$routeParams.sessionID;
 
         this.sessionID = this.sessionID ? this.sessionID : Math.floor(10000 + Math.random() * 90000);
         if (this.sessionID) {

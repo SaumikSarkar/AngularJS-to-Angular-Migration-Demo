@@ -20,7 +20,7 @@
         <input [(ngModel)]="eventDate" type="text" class="col-md-10 input" />
     </div>
     <div class="button-section col-md-12">
-        <a href="home" class="btn button">Back</a>
-        <a href="home" (click)="addEvent()" class="btn button">Save</a>
+        <a [routerLink]="['/home']" class="btn button">Back</a>
+        <a [routerLink]="['/home']" (click)="addEvent()" class="btn button">Save</a>
     </div>
 </div>
