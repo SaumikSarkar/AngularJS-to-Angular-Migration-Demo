@@ -1,0 +1,8 @@
+<div class="col-md-2 col-md-offset-10 create-event">
+    <a type="button" class="btn btn-primary btn-lg" [routerLink]="['/event/add']">Create Event</a>
+</div>
+<div class="event-cards col-md-12">
+    <div *ngFor="let event of events" class="col-md-4">
+        <event-card [event]="event"></event-card>
+    </div>
+</div>

@@ -1,26 +1,26 @@
 <div class="event-container col-md-8">
     <div class="input-field col-md-12">
         <label class="col-md-2">Session ID</label>
-        <input type="text" ng-model="sessionID" class="col-md-10 input" readonly />
+        <input type="text" [(ngModel)]="sessionID" class="col-md-10 input" readonly />
     </div>
     <div class="input-field col-md-12">
         <label class="col-md-2">Title</label>
-        <input type="text" ng-model="eventTitle" class="col-md-10 input" />
+        <input type="text" [(ngModel)]="eventTitle" class="col-md-10 input" />
     </div>
     <div class="input-field col-md-12">
         <label class="col-md-2">Decription</label>
-        <textarea ng-model="eventDescription" class="col-md-10 input"></textarea>
+        <textarea [(ngModel)]="eventDescription" class="col-md-10 input"></textarea>
     </div>
     <div class="input-field col-md-12">
         <label class="col-md-2">Author</label>
-        <input ng-model="eventAuthor" type="text" class="col-md-10 input" />
+        <input [(ngModel)]="eventAuthor" type="text" class="col-md-10 input" />
     </div>
     <div class="input-field col-md-12">
         <label class="col-md-2">Date</label>
-        <input ng-model="eventDate" type="text" class="col-md-10 input" />
+        <input [(ngModel)]="eventDate" type="text" class="col-md-10 input" />
     </div>
     <div class="button-section col-md-12">
-        <a href="#/home" class="btn button">Back</a>
-        <a href="#/home" ng-click="addEvent()" class="btn button">Save</a>
+        <a [routerLink]="['/home']" class="btn button">Back</a>
+        <a [routerLink]="['/home']" (click)="addEvent()" class="btn button">Save</a>
     </div>
 </div>

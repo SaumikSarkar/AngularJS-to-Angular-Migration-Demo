@@ -1,6 +1,11 @@
-demoAppModule.factory('eventService', function() {
-    return {
-        eventData: [
+import { Injectable } from "@angular/core";
+import { EventData } from "../_models/EventData";
+
+@Injectable()
+export class EventService {
+    eventData: Array<EventData>;
+    constructor() {
+        this.eventData = [
             {
                 title: 'AngularJS Fundamentals',
                 description: 'This session includes the fundamentals for AngularJS',
@@ -43,6 +48,6 @@ demoAppModule.factory('eventService', function() {
                 author: 'Abhishek Srivastava and Saumik Sarkar',
                 sessionID: 89411
             }
-        ]
+        ];
     }
-});
+}
