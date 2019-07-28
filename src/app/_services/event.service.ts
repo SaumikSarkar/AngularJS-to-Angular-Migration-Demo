@@ -1,8 +1,9 @@
 import { Injectable } from "@angular/core";
+import { EventData } from "../_models/EventData";
 
 @Injectable()
 export class EventService {
-    eventData: Array<any>;
+    eventData: Array<EventData>;
     constructor() {
         this.eventData = [
             {

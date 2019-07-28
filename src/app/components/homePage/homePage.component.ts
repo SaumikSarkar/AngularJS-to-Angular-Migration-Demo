@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { EventService } from "../../_services/event.service";
+import { EventData } from "../../_models/EventData";
 
 @Component({
     selector: 'home-page',
@@ -9,7 +10,7 @@ import { EventService } from "../../_services/event.service";
 
 export class HomePageComponent implements OnInit {
 
-    events: any;
+    events: Array<EventData>;
 
     constructor(public eventService: EventService) { }
 

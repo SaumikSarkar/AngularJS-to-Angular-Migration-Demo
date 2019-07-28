@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { EventService } from "../../_services/event.service";
 import { ActivatedRoute, ParamMap } from "@angular/router";
+import { EventData } from "../../_models/EventData";
 
 @Component({
     selector: 'create-event',
@@ -11,14 +12,14 @@ import { ActivatedRoute, ParamMap } from "@angular/router";
 
 export class CreateEventComponent implements OnInit {
 
-    events: any;
+    events: Array<EventData>;
     sessionID: number;
     eventTitle: string;
     eventDescription: string;
     eventAuthor: string;
     eventDate: string;
-    selectedEvent: Array<any>;
-    eventObject: any = {};
+    selectedEvent: Array<EventData>;
+    eventObject: EventData = new EventData();
 
     constructor(public eventService: EventService,
         private route: ActivatedRoute) { }
@@ -37,8 +38,8 @@ export class CreateEventComponent implements OnInit {
         }
     }
 
-    getEventData(sessionID) {
-        this.selectedEvent = this.events.filter((data: any) => {
+    getEventData(sessionID: number) {
+        this.selectedEvent = this.events.filter((data: EventData) => {
             if (sessionID == data.sessionID)
                 return data;
         });
@@ -59,7 +60,7 @@ export class CreateEventComponent implements OnInit {
             sessionID: this.sessionID
         };
         if (this.selectedEvent.length != 0) {
-            this.eventService.eventData.forEach((data: any, index: any) => {
+            this.eventService.eventData.forEach((data: EventData, index: number) => {
                 if (data.sessionID == this.sessionID) {
                     this.eventService.eventData.splice(index, 1);
                 }
