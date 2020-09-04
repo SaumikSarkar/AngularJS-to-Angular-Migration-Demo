@@ -19,7 +19,7 @@
         "@angular/router": "8.1.0",
         "@angular/upgrade": "8.1.0",
         "express": "*",
-        "node-sass": "4.12.0",
+        "node-sass": "4.13.1",
         "rxjs": "6.4.0",
         "zone.js": "0.9.1"
     },
